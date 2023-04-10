@@ -13,5 +13,5 @@ while True:
     st = (data.decode())
     st = st.upper()
     clientsocket.sendall(str.encode(data.decode().upper()))
-    clientsocket.close()
-
+clientsocket.close()
+s.close()
