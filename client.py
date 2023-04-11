@@ -1,7 +1,26 @@
-import socket 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((socket.gethostname(), 1234))
+import socket
+import random
+from time import sleep
 
-s.sendall(str.encode("Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh burzum-ishi krimpatul."))
-msg = s.recv(1024) 
-print(msg.decode("utf-8"))
+
+MIN = 10**9
+MAX = 10**29
+
+HOST = socket.gethostname();
+PORT = 5000
+
+def send_receive():
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((HOST, 1234))
+
+    random_value = random.randint(MIN, MAX)
+    print(random_value.__sizeof__())
+    client.sendall(str.encode(str(random_value)))
+
+    msg = client.recv(90)
+    print(msg.decode("utf-8"))
+
+
+while True:
+    send_receive()
+    sleep(10)
