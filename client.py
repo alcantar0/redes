@@ -1,14 +1,14 @@
-import socket as network
+import socket
 from time import sleep
 from random import randint as gerador_numero
 
 MAX = 10**30
 RESPONSE_SIZE = 10**2
-HOST = network.gethostname();
+HOST = socket.gethostname();
 PORT = 1234
 
 def send_to_server():
-    client = network.socket(network.AF_INET, network.SOCK_STREAM)
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect((HOST, PORT))
 
     random_value = str(gerador_numero(0, 10**30))
