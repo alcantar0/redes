@@ -1,8 +1,7 @@
 import socket as network
 from time import sleep
-from random import randint as number_generator
+from random import randint as gerador_numero
 
-MIN = 10**9
 MAX = 10**30
 RESPONSE_SIZE = 10**2
 HOST = network.gethostname();
@@ -12,7 +11,7 @@ def send_to_server():
     client = network.socket(network.AF_INET, network.SOCK_STREAM)
     client.connect((HOST, PORT))
 
-    random_value = str(number_generator(MIN, MAX))
+    random_value = str(gerador_numero(0, 10**30))
     client.sendall(str.encode(random_value))
 
     msg = client.recv(RESPONSE_SIZE)
