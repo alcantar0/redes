@@ -4,7 +4,7 @@ from random import (choice, randint as number_generator)
 
 MAX = 10**29
 RESPONSE_SIZE = 10**2
-HOST = socket.gethostname();
+HOST = socket.gethostname()
 PORT = 1234
 
 def generate_number_by_lenght(min: int, max: int, size: int):
@@ -12,8 +12,8 @@ def generate_number_by_lenght(min: int, max: int, size: int):
 
 def generate_number():
     number = number_generator(1,99)
-    less_or_equal_to_ten_digits = int(generate_number_by_lenght(0, 10**8,10))
-    greater_than_ten_digits = int(generate_number_by_lenght(10**10, 10**30,30))
+    less_or_equal_to_ten_digits = int(generate_number_by_lenght(0, 10**9, 10))
+    greater_than_ten_digits = int(generate_number_by_lenght(10**10, MAX, 30))
     sizes = [less_or_equal_to_ten_digits, greater_than_ten_digits]
     return number * choice(sizes)
 

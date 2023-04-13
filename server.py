@@ -1,14 +1,18 @@
-import socket as network
+import socket 
 import string
 import random
 
 RESPONSE_SIZE = 10**2
 
-HOST = network.gethostname();
+HOST = socket.gethostname();
 PORT = 1234
 
-server = network.socket(network.AF_INET, network.SOCK_STREAM)
-server.bind((network.gethostname(), PORT))
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+#Para que após a execução do server.py seja interrompida não aconteça a espera por conta do erro «Address already in use».
+
+server.bind((socket.gethostname(), PORT))
 server.listen()
 
 def random_string(length):
