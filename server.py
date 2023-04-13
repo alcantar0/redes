@@ -16,7 +16,7 @@ def random_string(length):
     return ''.join(random.choice(letters) for i in range(length))
 
 while True:
-    clientsocket, address = server.accept()
+    clientsocket, address = server.accept()    
     client_data = clientsocket.recv(RESPONSE_SIZE)
     received_number = (client_data.decode())
 
@@ -29,6 +29,4 @@ while True:
             clientsocket.sendall("PAR".encode())
         else:
             clientsocket.sendall("IMPAR".encode())
-
-clientsocket.close()
-s.close()
+    clientsocket.close()
