@@ -3,7 +3,7 @@ from time import sleep
 from random import choice
 
 RESPONSE_SIZE = 10**2
-HOST = socket.gethostname();
+HOST = socket.gethostname()
 PORT = 1234
 
 def send_to_server():
