@@ -4,7 +4,7 @@ import random
 
 RESPONSE_SIZE = 10**2
 
-HOST = socket.gethostname();
+HOST = socket.gethostname()
 PORT = 1234
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
