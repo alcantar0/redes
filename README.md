@@ -20,7 +20,6 @@ Para facilitar os testes durante o desenvolvimento, é utilizado um vetor de num
 ```python
 numbers = [121213,88754,4*10**11,3*10**29]
 random_value = str(choice(numbers))
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ```
 Fora da função, a um laço _while_ que chama a função _send_to_server_ e espera por 10 segundos.
 ```python
